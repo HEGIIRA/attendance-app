@@ -1,5 +1,7 @@
 import 'package:intl/intl.dart';
 
+
+//INI NGAMBIL DATA SECARA REAL TIME DRI LIBRARY
 void setDateTime(Function(String, String, String) onDateTimeSet) {
   var dateNow = DateTime.now();
   var dateFormat = DateFormat('dd mm yyyy');
@@ -12,7 +14,7 @@ void setDateTime(Function(String, String, String) onDateTimeSet) {
   onDateTimeSet(date, time, currentDate);
 }
 
-void setAttendStatus(Function(String) onStatusSet) {
+void setAttendanceStatus(Function(String) onStatusSet) {
   var dateNow = DateTime.now();
   var hour = int.parse(DateFormat("hh").format(dateNow)); //int.parse ngubah int jadi string
   var minute = int.parse(DateFormat("mm").format(dateNow));
