@@ -28,17 +28,17 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   final controller = TextEditingController(); 
   final CollectionReference dataCollection = FirebaseFirestore.instance.collection('attendance');
 
-  @override
-  void initState() {
-    handleLocationPermission();
-    setDateTime();
-    setAttendStatus();
+  // @override
+  // void initState() {
+  //   handleLocationPermission();
+  //   setDateTime();
+  //   setAttendStatus();
 
-    if (image != null) { //klo image nya ada/ga kosong
-      isLoading = true;
-      getGeoLocationPosition();
-    }
-  }
+  //   if (image != null) { //klo image nya ada/ga kosong
+  //     isLoading = true;
+  //     getGeoLocationPosition();
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
