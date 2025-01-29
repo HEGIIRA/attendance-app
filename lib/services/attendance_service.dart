@@ -43,7 +43,7 @@ Future<void> submitAttendanceReport(
       ));
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()) 
+        MaterialPageRoute(builder: (context) => const HomeScreen()) 
       );
     }
     // e = error, i = information
@@ -51,21 +51,21 @@ Future<void> submitAttendanceReport(
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.info_outline,
               color: Colors.white,
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
               child: Text(
                 "Ups, $e", //ini manggil eror
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               )
             )
           ],
         ),
         backgroundColor: Colors.blueAccent,
-        shape: StadiumBorder(),
+        shape: const StadiumBorder(),
         behavior: SnackBarBehavior.floating,
       ));
     }
@@ -73,21 +73,21 @@ Future<void> submitAttendanceReport(
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.error_outline,
             color: Colors.white,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(
               "Ups, $error", 
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
           )
         ],
       ),
       backgroundColor: Colors.blueAccent,
-      shape: StadiumBorder(),
+      shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
     ));
     Navigator.of(context).pop();
@@ -99,12 +99,12 @@ void showLoaderDialog(BuildContext context) {
   AlertDialog alert = AlertDialog(
     content: new Row(
       children: [
-        CircularProgressIndicator(
+        const CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent), //always itu pokoknya animasi loading yg common lah
         ),
         Container(
-          margin: EdgeInsets.only(left: 20),
-          child: Text("Loading..."),
+          margin: const EdgeInsets.only(left: 20),
+          child: const Text("Loading..."),
         )
       ],
     )
