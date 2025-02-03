@@ -1,5 +1,11 @@
 import 'package:attendance_app/services/location_service.dart';
 import 'package:attendance_app/services/timestamp_service.dart';
+import 'package:attendance_app/ui/attend/components/app_bar.dart';
+import 'package:attendance_app/ui/attend/components/capture_photo.dart';
+import 'package:attendance_app/ui/attend/components/header.dart';
+import 'package:attendance_app/ui/attend/components/location.dart';
+import 'package:attendance_app/ui/attend/components/name_input.dart';
+import 'package:attendance_app/ui/attend/components/submit_button.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -58,9 +64,29 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      appBar: ,
+      appBar: buildAppBar(context),
+      body: SingleChildScrollView(
+        child: Card(
+          color: Colors.white,
+          margin: const EdgeInsets.fromLTRB(10, 10, 10, 30),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          elevation: 5,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              buildHeader(),
+              buildCapturePhotoSection(context, size, image),
+              buildNameInputField(controllerName),
+              buildLocationSection(isLoading, addressPlaceholder),
+              buildSubmitButton(context, size, image, controllerName, addressPlaceholder, statusPlaceholder, timeStampPlaceholder)
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
