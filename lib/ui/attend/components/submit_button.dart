@@ -1,10 +1,11 @@
+import 'package:attendance_app/services/attendance_service.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextEditingController controllerName, String address, String status, String timeStamp) {
   return Container(
     alignment: Alignment.center,
-    margin: EdgeInsets.all(10),
+    margin: const EdgeInsets.all(10),
     child: Material(
       elevation: 3,borderRadius: BorderRadius.circular(20),
       child: Container(
@@ -17,16 +18,23 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
         child: Material(
           borderRadius: BorderRadius.circular(20),
           color: Colors.blueAccent,
-          child: InkWell(
+          child: InkWell(  //bisa ngasih aksi klo di tap, bisa ngasih efek ripple
             splashColor: Colors.blue,
             borderRadius: BorderRadius.circular(20),
             onTap: () {
               if (image == null || controllerName.text.isEmpty) {
-                showSnackBar();
+                showSnackBar(context, "Please fill all the forms!");
               } else {
-                
+                submitAttendanceReport(context, address, controllerName.text.toString(), status, timeStamp); 
               }
             },
+            child: const Text(
+              "Submit now",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+              ),
+            ),
           ),
         ),
       ),
@@ -35,7 +43,7 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
 }
 
 void showSnackBar(BuildContext context, String message,) {
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
     content: Row(
       children: [
         Icon(Icons.info_outline,
