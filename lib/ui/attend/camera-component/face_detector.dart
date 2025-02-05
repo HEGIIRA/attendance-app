@@ -38,7 +38,7 @@ class FaceDetectorComponent {
       }
 
       //perkondisian klo fitur tracking wajahnya udah aktif
-      if (face.trackingId != null) {
+      if (face.trackingId != null) { //nandain klo mukanya dah aktif
         final int? trackingId = face.trackingId;
         print("Tracking ID: $trackingId");
       }

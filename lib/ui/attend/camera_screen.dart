@@ -23,7 +23,7 @@ class _CameraScreenState extends State<CameraScreen> with TickerProviderStateMix
     cameraControllerComponent.loadCamera();
   }
 
-
+//
   @override
   Widget build(BuildContext context) {
     return Scaffold(
