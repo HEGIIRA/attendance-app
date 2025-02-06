@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FormHeader extends StatelessWidget {
   final String title;
-  final IconData icon; //iconData tuh icon yg pake material dri flutter
+  final IconData icon; //iconData tuh icon yg pake material dri flutter, dia biar pas dipanggil di file lain, gausah panjang ngetiknya  IconData->Icon->Icons.apagtu
 
   FormHeader({required this.title, required this.icon});
   
