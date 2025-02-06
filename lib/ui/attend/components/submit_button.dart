@@ -22,7 +22,7 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
             splashColor: Colors.blue,
             borderRadius: BorderRadius.circular(20),
             onTap: () {
-              if (image == null || controllerName.text.isEmpty) {
+              if (image == null || controllerName.text.isEmpty) { 
                 showSnackBar(context, "Please fill all the forms!");
               } else {
                 submitAttendanceReport(context, address, controllerName.text.toString(), status, timeStamp); 
