@@ -64,7 +64,7 @@ class SubmitButton extends StatelessWidget {
             icon,
             color: Colors.white,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Text(
             message,
             style: const TextStyle(color: Colors.white),
@@ -89,8 +89,8 @@ class SubmitButton extends StatelessWidget {
                 valueColor: AlwaysStoppedAnimation(Colors.blueAccent),
               ),
               Container(
-                margin: EdgeInsets.only(left: 20),
-                child: Text("Please wait..."),
+                margin: const EdgeInsets.only(left: 20),
+                child: const Text("Please wait..."),
               )
             ],
           ),
