@@ -32,7 +32,7 @@ class __AttendanceHistoryScreenStateState extends State<_AttendanceHistoryScreen
           return ListView.builder(
             itemCount: data.length, //jumlah data yg kita punya/di firebase
             itemBuilder: (context, index) {
-              //put attendance card UI here
+              //TODO put attendance card UI here
             },
           );
         }
